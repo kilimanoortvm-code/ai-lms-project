@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Notes</title>
+</head>
+<body>
+
+<h1>Upload Notes </h1>
+
+<a href="/teacher/dashboard/">Back to Dashboard</a>
+
+<br><br>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label>Select Course:</label>
+    <select name="course">
+        {% for course in courses %}
+            <option value="{{ course.id }}">{{ course.title }}</option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <input type="text" name="title" placeholder="Note Title" required>
+
+    <br><br>
+
+    <input type="file" name="file" required>
+
+    <br><br>
+
+    <button type="submit">Upload</button>
+</form>
+
+</body>
+</html>

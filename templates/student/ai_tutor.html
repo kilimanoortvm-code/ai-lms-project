@@ -1,0 +1,19 @@
+<h1>AI Tutor </h1>
+<a href="/student/dashboard/">Back to Dashboard</a>
+
+<input type="text" id="msg" placeholder="Ask your doubt...">
+<button onclick="sendMessage()">Ask</button>
+
+<p id="response"></p>
+
+<script>
+function sendMessage() {
+    let message = document.getElementById("msg").value;
+
+    fetch(`/ai/chat/?message=${encodeURIComponent(message)}`)
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("response").innerText = data.reply;
+    });
+}
+</script>

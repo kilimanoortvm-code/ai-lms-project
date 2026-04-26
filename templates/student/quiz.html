@@ -1,0 +1,39 @@
+<h1>Quiz </h1>
+<h6> All the Best</h6>
+<a href="/student/dashboard/">Back to Dashboard</a>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {% for q in questions %}
+        <div style="background:white;padding:20px;margin:15px;border-radius:10px;">
+            <h3>{{ forloop.counter }}. {{ q.question }}</h3>
+
+            <label>
+                <input type="radio" name="{{ q.id }}" value="option1" required>
+                {{ q.option1 }}
+            </label><br>
+
+            <label>
+                <input type="radio" name="{{ q.id }}" value="option2">
+                {{ q.option2 }}
+            </label><br>
+
+            <label>
+                <input type="radio" name="{{ q.id }}" value="option3">
+                {{ q.option3 }}
+            </label><br>
+
+            <label>
+                <input type="radio" name="{{ q.id }}" value="option4">
+                {{ q.option4 }}
+            </label><br>
+        </div>
+    {% empty %}
+        <p>No quiz questions available yet.</p>
+    {% endfor %}
+
+    {% if questions %}
+        <button type="submit">Submit Quiz</button>
+    {% endif %}
+</form>

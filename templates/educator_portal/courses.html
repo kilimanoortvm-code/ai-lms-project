@@ -1,0 +1,11 @@
+<h1>Teacher Courses </h1>
+<a href="/teacher/dashboard/">Back to Dashboard</a>
+
+{% for course in courses %}
+    <div style="background:#f8fafc;padding:20px;margin:15px;border-radius:10px;">
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+    </div>
+{% empty %}
+    <p>No courses added yet.</p>
+{% endfor %}
