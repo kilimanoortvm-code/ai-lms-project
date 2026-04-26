@@ -40,6 +40,6 @@ ai_lms/
 │
 ├── accounts/ # User authentication (login/register)
 ├── courses/ # Courses, notes, quiz
-├── ai_features/ # AI Tutor logic
-├── templates/ # HTML pages
+├── ai_features/  AI Tutor logic
+├── templates/  (HTML pages)
 ├── manage.py
