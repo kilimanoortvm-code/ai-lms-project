@@ -35,11 +35,4 @@ This is a web-based Learning Management System built using **Django (Python)** w
 
 ---
 
-##  Project Structure
-ai_lms/
-│
-├── accounts/ # User authentication (login/register)
-├── courses/ # Courses, notes, quiz
-├── ai_features/  AI Tutor logic
-├── templates/  (HTML pages)
-├── manage.py
+
